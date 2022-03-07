@@ -1,13 +1,12 @@
 import os
-
 from selenium import webdriver
 from time import sleep
-
 from dotenv import load_dotenv
 
-driver = webdriver.Chrome(
-    executable_path="/home/guilherme/apps/VirtualEnv/Scripts/chromedriver_linux64_2/chromedriver"
-)
+load_dotenv()
+
+driver = webdriver.Chrome(executable_path=os.getenv("PATH_CHROME"))
+
 
 """
 CREATE A DECORATOR TO MAKE THE PASSWORD SECURE
@@ -18,14 +17,10 @@ USE KIVY TO CREATE AN USER INTERFACE
 
 class Scripts:
 
-    load_dotenv()
-
-    def __init__(self):
-        pass
-
     @staticmethod
     def create_tabs():
         """Script for create necessary tabs"""
+
         driver.get("https://login.yahoo.com/")
         sleep(2)
         driver.execute_script("window.open('https://www.linkedin.com/')")
@@ -39,7 +34,7 @@ class Scripts:
     def login_yahoo_email():
         """Script for login in the email yahoo."""
 
-        driver.switch_to.window(driver.window_handles[0])
+        # driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_xpath('//*[@id="login-username"]').send_keys(
             f'{os.getenv("YAHOO_EMAIL")}'
         )
