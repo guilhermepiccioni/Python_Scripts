@@ -62,12 +62,16 @@ class Scripts:
         driver.find_element_by_xpath("/html/body/nav/div/a[2]").click()
         sleep(1)
         driver.find_element_by_xpath('//*[@id="username"]').send_keys(
-            f'{values.get("LINKEDIN_LOGIN")}')
+            f'{values.get("LINKEDIN_LOGIN")}'
+        )
         sleep(1)
         driver.find_element_by_xpath('//*[@id="password"]').send_keys(
-            f'{values.get("LINKEDIN_PASSWORD")}')
+            f'{values.get("LINKEDIN_PASSWORD")}'
+        )
         sleep(1)
-        driver.find_element_by_xpath('//*[@id="organic-div"]/form/div[3]/button').click()
+        driver.find_element_by_xpath(
+            '//*[@id="organic-div"]/form/div[3]/button'
+        ).click()
 
     @staticmethod
     def login_telegram():
@@ -76,18 +80,25 @@ class Scripts:
 
         driver.switch_to.window(driver.window_handles[-2])
         sleep(1)
-        driver.find_element_by_xpath('//*[@id="auth-pages"]/div/div[2]/div[2]/div/div[2]/button[1]/div').click()
+        driver.find_element_by_xpath(
+            '//*[@id="auth-pages"]/div/div[2]/div[2]/div/div[2]/button[1]/div'
+        ).click()
         sleep(1)
-        driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[1]/div[1]").send_keys(
-            f'{values.get("LOCAL_COUNTRY")}')
+        driver.find_element_by_xpath(
+            "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[1]/div[1]"
+        ).send_keys(f'{values.get("LOCAL_COUNTRY")}')
         sleep(2)
         driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[1]/div[3]/div/ul/li[29]/span[1]").click()
+            "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[1]/div[3]/div/ul/li[29]/span[1]"
+        ).click()
         sleep(2)
-        driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[2]/div[1]").send_keys(
-            f'{values.get("TELEGRAM_PHONE")}')
+        driver.find_element_by_xpath(
+            "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[2]/div[1]"
+        ).send_keys(f'{values.get("TELEGRAM_PHONE")}')
         sleep(2)
-        driver.find_element_by_xpath('//*[@id="auth-pages"]/div/div[2]/div[1]/div/div[3]/button[1]/div').click()
+        driver.find_element_by_xpath(
+            '//*[@id="auth-pages"]/div/div[2]/div[1]/div/div[3]/button[1]/div'
+        ).click()
         sleep(5)
 
     @staticmethod
@@ -97,16 +108,24 @@ class Scripts:
 
         sleep(3)
         driver.switch_to.window(driver.window_handles[0])
-        driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(
-            f'{values.get("INSTAGRAM_LOGIN")}')
-        driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(
-            f'{values.get("INSTAGRAM_PASSWORD")}')
+        driver.find_element_by_xpath(
+            '//*[@id="loginForm"]/div/div[1]/div/label/input'
+        ).send_keys(f'{values.get("INSTAGRAM_LOGIN")}')
+        driver.find_element_by_xpath(
+            '//*[@id="loginForm"]/div/div[2]/div/label/input'
+        ).send_keys(f'{values.get("INSTAGRAM_PASSWORD")}')
         sleep(1)
-        driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]").click()
+        driver.find_element_by_xpath(
+            "/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]"
+        ).click()
         sleep(5)
-        driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div/div/button').click()
+        driver.find_element_by_xpath(
+            '//*[@id="react-root"]/section/main/div/div/div/div/button'
+        ).click()
         sleep(8)
-        driver.find_element_by_xpath('/html/body/div[5]/div/div/div/div[3]/button[2]').click()
+        driver.find_element_by_xpath(
+            "/html/body/div[5]/div/div/div/div[3]/button[2]"
+        ).click()
 
 
 if __name__ == "__main__":
