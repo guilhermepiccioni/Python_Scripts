@@ -1,7 +1,9 @@
+import os
+
 from selenium import webdriver
 from time import sleep
 
-from dotenv import dotenv_values
+from dotenv import load_dotenv
 
 driver = webdriver.Chrome(
     executable_path="/home/guilherme/apps/VirtualEnv/Scripts/chromedriver_linux64_2/chromedriver"
@@ -16,7 +18,7 @@ USE KIVY TO CREATE AN USER INTERFACE
 
 class Scripts:
 
-    env = dotenv_values(".env")
+    load_dotenv()
 
     def __init__(self):
         pass
@@ -36,16 +38,15 @@ class Scripts:
     @staticmethod
     def login_yahoo_email():
         """Script for login in the email yahoo."""
-        values = Scripts.env
 
         driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_xpath('//*[@id="login-username"]').send_keys(
-            f'{values.get("YAHOO_EMAIL")}'
+            f'{os.getenv("YAHOO_EMAIL")}'
         )
         driver.find_element_by_xpath('//*[@id="login-signin"]').click()
         sleep(1)
         driver.find_element_by_xpath('//*[@id="login-passwd"]').send_keys(
-            f'{values.get("YAHOO_PASSWORD")}'
+            f'{os.getenv("YAHOO_PASSWORD")}'
         )
         sleep(1)
         driver.find_element_by_xpath('//*[@id="login-signin"]').click()
@@ -56,17 +57,16 @@ class Scripts:
     @staticmethod
     def login_linkedin():
         """Script for login in linkedin"""
-        values = Scripts.env
 
         driver.switch_to.window(driver.window_handles[-1])
         driver.find_element_by_xpath("/html/body/nav/div/a[2]").click()
         sleep(1)
         driver.find_element_by_xpath('//*[@id="username"]').send_keys(
-            f'{values.get("LINKEDIN_LOGIN")}'
+            f'{os.getenv("LINKEDIN_LOGIN")}'
         )
         sleep(1)
         driver.find_element_by_xpath('//*[@id="password"]').send_keys(
-            f'{values.get("LINKEDIN_PASSWORD")}'
+            f'{os.getenv("LINKEDIN_PASSWORD")}'
         )
         sleep(1)
         driver.find_element_by_xpath(
@@ -76,7 +76,6 @@ class Scripts:
     @staticmethod
     def login_telegram():
         """Script for login in telegram"""
-        values = Scripts.env
 
         driver.switch_to.window(driver.window_handles[-2])
         sleep(1)
@@ -86,7 +85,7 @@ class Scripts:
         sleep(1)
         driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[1]/div[1]"
-        ).send_keys(f'{values.get("LOCAL_COUNTRY")}')
+        ).send_keys(f'{os.getenv("LOCAL_COUNTRY")}')
         sleep(2)
         driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[1]/div[3]/div/ul/li[29]/span[1]"
@@ -94,7 +93,7 @@ class Scripts:
         sleep(2)
         driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[2]/div[1]"
-        ).send_keys(f'{values.get("TELEGRAM_PHONE")}')
+        ).send_keys(f'{os.getenv("TELEGRAM_PHONE")}')
         sleep(2)
         driver.find_element_by_xpath(
             '//*[@id="auth-pages"]/div/div[2]/div[1]/div/div[3]/button[1]/div'
@@ -104,16 +103,15 @@ class Scripts:
     @staticmethod
     def login_instagram():
         """Script for login in the instagram."""
-        values = Scripts.env
 
         sleep(3)
         driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_xpath(
             '//*[@id="loginForm"]/div/div[1]/div/label/input'
-        ).send_keys(f'{values.get("INSTAGRAM_LOGIN")}')
+        ).send_keys(f'{os.getenv("INSTAGRAM_LOGIN")}')
         driver.find_element_by_xpath(
             '//*[@id="loginForm"]/div/div[2]/div/label/input'
-        ).send_keys(f'{values.get("INSTAGRAM_PASSWORD")}')
+        ).send_keys(f'{os.getenv("INSTAGRAM_PASSWORD")}')
         sleep(1)
         driver.find_element_by_xpath(
             "/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]"
