@@ -11,7 +11,9 @@ driver = webdriver.Chrome(executable_path=os.getenv("PATH_CHROME"))
 class Scripts:
     @staticmethod
     def create_tabs():
-        """Script for create necessary tabs"""
+        """
+        Script to create necessary tabs.
+        """
 
         driver.get(os.getenv("YAHOO"))
         sleep(2)
@@ -24,7 +26,9 @@ class Scripts:
 
     @staticmethod
     def login_yahoo_email():
-        """Script for login in the email yahoo."""
+        """
+        Script login in the email yahoo.
+        """
 
         driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_xpath('//*[@id="login-username"]').send_keys(
@@ -43,7 +47,9 @@ class Scripts:
 
     @staticmethod
     def login_linkedin():
-        """Script for login in linkedin"""
+        """
+        Script login in linkedin.
+        """
 
         driver.switch_to.window(driver.window_handles[-1])
         driver.find_element_by_xpath("/html/body/nav/div/a[2]").click()
@@ -62,7 +68,9 @@ class Scripts:
 
     @staticmethod
     def login_telegram():
-        """Script for login in telegram"""
+        """
+        Script to login in telegram.
+        """
 
         driver.switch_to.window(driver.window_handles[-2])
         sleep(1)
@@ -89,7 +97,9 @@ class Scripts:
 
     @staticmethod
     def login_instagram():
-        """Script for login in the instagram."""
+        """
+        Script login in the instagram.
+        """
 
         sleep(3)
         driver.switch_to.window(driver.window_handles[-3])

@@ -24,8 +24,6 @@ bandit:
 .PHONY: lint
 lint: black mypy flake8 bandit
 
-# Executing only in terminal
-
 .PHONY: run
 run: build
 	python3 open_chrome.py

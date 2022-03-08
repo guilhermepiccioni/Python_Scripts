@@ -1,3 +1,6 @@
+# CLONE THE PROJECT, CREATE THE REQUIREMENTS BELOW AND TYPE IN THE TERMINAL:
+       - make run
+
 # ENGLISH
 
 This script was created to minimize your work, automatically opening your email, linkedin, telegram and instagram.
@@ -43,6 +46,8 @@ INSTAGRAM_PASSWORD = **"c1234#"**
 PATH_CHROME = **"/home/user/(folder where to save the file)/chromedriver"**
 
 ------------------------------------------------------------------------------------------------------------------------
+# CLONE O PROJETO, CRIE OS REQUISITOS ABAIXO E DIGITE NO TERMINAL:
+       - make run
 
 # PORTUGUESE
 
