@@ -1,0 +1,12 @@
+
+services:
+
+  scripts_db:
+    image: postgres:14.0
+    environment:
+      - POSTGRES_DB=scripts_data
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    container_name: scripts_db
