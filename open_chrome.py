@@ -33,7 +33,7 @@ class Scripts:
     def login_yahoo_email():
         """Script for login in the email yahoo."""
 
-        # driver.switch_to.window(driver.window_handles[0])
+        driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_xpath('//*[@id="login-username"]').send_keys(
             f'{os.getenv("YAHOO_EMAIL")}'
         )
@@ -123,7 +123,7 @@ class Scripts:
 if __name__ == "__main__":
     sp = Scripts()
     sp.create_tabs()
-    # sp.login_yahoo_email()
-    # sp.login_linkedin()
-    # sp.login_telegram()
-    # sp.login_instagram()
+    sp.login_yahoo_email()
+    sp.login_linkedin()
+    sp.login_telegram()
+    sp.login_instagram()
