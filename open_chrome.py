@@ -20,20 +20,20 @@ class Scripts:
     def create_tabs():
         """Script for create necessary tabs"""
 
-        driver.get("https://login.yahoo.com/")
+        driver.get(os.getenv("YAHOO"))
         sleep(2)
-        driver.execute_script("window.open('https://www.linkedin.com/')")
+        driver.execute_script(os.getenv("LINKEDIN"))
         sleep(2)
-        driver.execute_script("window.open('https://web.telegram.org/k/')")
+        driver.execute_script(os.getenv("TELEGRAM"))
         sleep(2)
-        driver.execute_script("window.open('https://www.instagram.com/')")
+        driver.execute_script(os.getenv("INSTAGRAM"))
         sleep(5)
 
     @staticmethod
     def login_yahoo_email():
         """Script for login in the email yahoo."""
 
-        driver.switch_to.window(driver.window_handles[0])
+        # driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_xpath('//*[@id="login-username"]').send_keys(
             f'{os.getenv("YAHOO_EMAIL")}'
         )
@@ -123,7 +123,7 @@ class Scripts:
 if __name__ == "__main__":
     sp = Scripts()
     sp.create_tabs()
-    sp.login_yahoo_email()
-    sp.login_linkedin()
-    sp.login_telegram()
-    sp.login_instagram()
+    # sp.login_yahoo_email()
+    # sp.login_linkedin()
+    # sp.login_telegram()
+    # sp.login_instagram()
