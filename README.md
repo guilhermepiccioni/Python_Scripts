@@ -36,7 +36,7 @@ INSTAGRAM_PASSWORD = **"c1234#"**
 
 
 
-### (In this case you will have to unzip the file.)
+### (In this case you will have to unzip the file)
 
 ### Ex: "/home/user/VirtualEnv/Scripts/chromedriver_linux64_2/chromedriver"
 
