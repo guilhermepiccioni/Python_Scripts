@@ -8,13 +8,6 @@ load_dotenv()
 driver = webdriver.Chrome(executable_path=os.getenv("PATH_CHROME"))
 
 
-"""
-CREATE A DECORATOR TO MAKE THE PASSWORD SECURE
-USE A .ENV FILE TO STORE YOUR PASSWORD
-USE KIVY TO CREATE AN USER INTERFACE
-"""
-
-
 class Scripts:
     @staticmethod
     def create_tabs():
@@ -99,7 +92,7 @@ class Scripts:
         """Script for login in the instagram."""
 
         sleep(3)
-        driver.switch_to.window(driver.window_handles[0])
+        driver.switch_to.window(driver.window_handles[-3])
         driver.find_element_by_xpath(
             '//*[@id="loginForm"]/div/div[1]/div/label/input'
         ).send_keys(f'{os.getenv("INSTAGRAM_LOGIN")}')
@@ -114,7 +107,7 @@ class Scripts:
         driver.find_element_by_xpath(
             '//*[@id="react-root"]/section/main/div/div/div/div/button'
         ).click()
-        sleep(8)
+        sleep(5)
         driver.find_element_by_xpath(
             "/html/body/div[5]/div/div/div/div[3]/button[2]"
         ).click()

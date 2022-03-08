@@ -1,7 +1,5 @@
 DOCKER := docker
 FILE_NAME := open_chrome.py
-DOCKER_COMPOSE = docker-compose
-FILE_DOCKER = docker-compose.yaml
 
 .PHONY: build
 build:
@@ -26,12 +24,8 @@ bandit:
 .PHONY: lint
 lint: black mypy flake8 bandit
 
-.PHONY: scripts_db
-scripts_db:
-	$(DOCKER_COMPOSE) -f $(FILE_DOCKER) up -d scripts_db
-
 # Executing only in terminal
 
 .PHONY: run
-run: build scripts_db
+run: build
 	python3 open_chrome.py
