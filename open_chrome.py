@@ -1,7 +1,7 @@
 import os
 from selenium import webdriver
 from time import sleep
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # type: ignore
 
 load_dotenv()
 
@@ -16,7 +16,6 @@ USE KIVY TO CREATE AN USER INTERFACE
 
 
 class Scripts:
-
     @staticmethod
     def create_tabs():
         """Script for create necessary tabs"""
